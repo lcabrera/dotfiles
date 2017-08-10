@@ -1,5 +1,4 @@
-# Test
-echo -e "Ejecutando .bash_logout"
+[ "$DEBUG" == 1 ] && echo -e "Entrando a .bash_logout"
 
 if [ -f "${HOME}"/.bash_logout.local ]; then
     # shellcheck source=${HOME}/.bash_logout.local
@@ -11,6 +10,7 @@ fi
 
 if [ "${SHLVL}" = 1 ]; then
     # [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q
+    [ "$DEBUG" == 1 ] && echo -e "Saliendo de .bash_logout"
     echo -e "Descomentar en .bash_logout para limpiar la terminal al salir."
 fi
 

@@ -1,10 +1,11 @@
-# TEST
-echo -e "Ejecutando .bash_logout.local"
+[ "$DEBUG" == 1 ] && echo -e "Entrando a .bash_logout.local"
 
 if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
     [ "$VIRTUAL_ENV" ] && deactivate
 fi
 
 # killall fetchmail
+
+[ "$DEBUG" == 1 ] && echo -e "Saliendo de .bash_logout.local"
 
 # END

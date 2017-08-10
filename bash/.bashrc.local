@@ -11,8 +11,7 @@
 #
 #############################################################################
 
-# TEST
-echo -e "Ejecutando .bashrc.local"
+[ "$DEBUG" == 1 ] && echo -e "Entrando a .bashrc.local"
 
 # Personal bin directory
 # ~~~~~~~~~~~~~~~~~~~~~~
@@ -43,10 +42,10 @@ fi
 # GnuPG (TODO: Verificar que existe gnupg)
 # ~~~~~
 if [ -f "/usr/bin/gpgconf" ]; then
-    eval "$(/usr/bin/gpgconf --kill gpg-agent);"
+    ( eval "$(/usr/bin/gpgconf --kill gpg-agent)" ) > /dev/null 2>&1
     export GPG_TTY
     GPG_TTY="$(tty)"
-    /usr/bin/gpg-agent --daemon --enable-ssh-support --pinentry-program /usr/bin/pinentry-gnome3 --scdaemon-program /usr/lib/gnupg/scdaemon
+    /usr/bin/gpg-agent --quiet --daemon --enable-ssh-support --pinentry-program /usr/bin/pinentry-gnome3 --scdaemon-program /usr/lib/gnupg/scdaemon > /dev/null 2>&1
 else
     command -v gnupg >/dev/null 2>&1 || { echo -e "apt install gnupg gnupg-agent gnupg-l10n gnupg2 .\n\nSaliendo.\n" >&2; exit 1;}
 fi
@@ -73,5 +72,7 @@ export PATH="${HOME}/.rvm/bin:${PATH}"
 # shellcheck source=${HOME}/.rvm/scripts/rvm
 # shellcheck disable=SC1091
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"
+
+[ "$DEBUG" == 1 ] && echo -e "Saliendo de .bashrc.local"
 
 # END

@@ -53,6 +53,10 @@ call plug#end()
 """ Plugin configurations
 " GUI
 if has('gui_running')
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Menlo:h12
+    set transparency=7
+  endif
   if has('gui_gtk')
     set guifont=Hack\ 11
   elseif has('gui_win32')
@@ -112,4 +116,13 @@ autocmd BufReadPost *
       \ endif
 
 " Load local configurations if available
-silent! source ~/.vim/local.vim
+silent! source ~/.vimrc.local
+
+"" Include user's extra bundle
+if filereadable(expand("~/.vimrc.local.bundles"))
+  silent! source ~/.vimrc.local.bundles
+  call plug#end()
+endif
+
+
+" END

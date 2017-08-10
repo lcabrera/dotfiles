@@ -1,4 +1,5 @@
-# TEST
-echo -e "Ejecutando .bash_login"
+[ "$DEBUG" == 1 ] && echo -e "Entrando a .bash_login"
+
+[ "$DEBUG" == 1 ] && echo -e "Saliendo de .bash_login"
 
 # END
