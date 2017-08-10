@@ -13,6 +13,7 @@ help:
 	@echo "  lint        check style with flake8"
 	@echo "  pylint      check style with pylint"
 	@echo "  test        run all your tests using py.test"
+	@echo "  todo        Crea enlaces simbólicos a todas las aplicaciones contempladas."
 
 #env:
 #	sudo easy_install pip && \
@@ -64,4 +65,23 @@ test:
 #	generar archivos de distribución de la aplicación
 #distclean:
 #	eliminar los archivos de distribución
+
+todo:
+	stow bash
+	stow fonts
+	stow git
+	stow htop
+	stow links2
+	stow mc
+	stow mpd
+	stow mutt
+	stow nano
+	stow nvpy
+	stow python
+	stow reportbug
+	stow ssh
+	stow terminator
+	stow themes
+	stow tmux
+	stow vim
 
