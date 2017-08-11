@@ -68,10 +68,12 @@ test:
 
 todo:
 	stow bash
+	stow desktop
 	stow fonts
 	stow git
 	stow htop
 	stow links2
+	stow luakit
 	stow mc
 	stow mpd
 	stow mutt
