@@ -47,7 +47,7 @@ if [ -f "/usr/bin/gpgconf" ]; then
     GPG_TTY="$(tty)"
     /usr/bin/gpg-agent --quiet --daemon --enable-ssh-support --pinentry-program /usr/bin/pinentry-gnome3 --scdaemon-program /usr/lib/gnupg/scdaemon > /dev/null 2>&1
 else
-    command -v gnupg >/dev/null 2>&1 || { echo -e "apt install gnupg gnupg-agent gnupg-l10n gnupg2 .\n\nSaliendo.\n" >&2; exit 1;}
+    command -v gnupg >/dev/null 2>&1 || { echo -e "apt install gnupg gnupg-agent gnupg-l10n gnupg2 .\n\nSaliendo.\n" >&2; }
 fi
 
 # VirtualEnvWrapper
@@ -57,7 +57,7 @@ if [ -f "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
     export VIRTUALENV_PYTHON=/usr/bin/python3
 else
-    command -v virtualenvwrapper >/dev/null 2>&1 || { echo -e "apt install virtualenv python-virtualenv python3-virtualenv virtualenvwrapper .\n\nSaliendo.\n" >&2; exit 1;}
+    command -v virtualenvwrapper >/dev/null 2>&1 || { echo -e "apt install virtualenv python-virtualenv python3-virtualenv virtualenvwrapper .\n\nSaliendo.\n" >&2; }
 fi
 
 # Pandoc

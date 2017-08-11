@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=example
+GenericName=Example of desktop file
+Comment=Comment example
+Exec=example
+Icon=/usr/share/pixmaps/gv_icon.xpm
+Terminal=false
+Type=Application
+MimeType=application/ps;application/pdf;
+Categories=Viewer;Graphics;

@@ -9,7 +9,7 @@
 # Keychain
 # ~~~~~~~~
 if [ -f "/usr/bin/keychain" ]; then
-    /usr/bin/keychain --agents gpg,ssh --ignore-missing -k others --eval id_rsa id_dsa --quiet
+    /usr/bin/keychain --agents gpg,ssh --ignore-missing -k others --eval id_rsa id_dsa --quiet > /dev/null 2>&1
     # shellcheck source=${HOME}/.keychain/${HOSTNAME}-sh
     # shellcheck disable=SC1091
     source "${HOME}/.keychain/${HOSTNAME}-sh"
